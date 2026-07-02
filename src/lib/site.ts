@@ -23,3 +23,14 @@ export const STORE_LINKS = {
 } as const;
 
 export const APP_IS_LIVE = STORE_LINKS.ios.available || STORE_LINKS.android.available;
+
+/**
+ * Hero carousel slides. These are on-brand placeholder mockups — replace the
+ * paths with real app screenshots (PNG/JPG) dropped into `public/screenshots/`.
+ * Portrait phone aspect (~9:19) works best.
+ */
+export const HERO_SCREENSHOTS: { src: string; alt: string }[] = [
+  { src: "/screenshots/album.svg", alt: "FamFrame album grid of family photos" },
+  { src: "/screenshots/photo.svg", alt: "A photo in FamFrame with family reactions" },
+  { src: "/screenshots/family.svg", alt: "Managing family members in FamFrame" },
+];

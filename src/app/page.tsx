@@ -12,6 +12,7 @@ import {
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { AppStoreButtons } from "@/components/app-cta";
+import { HeroCarousel } from "@/components/hero-carousel";
 
 const FEATURES = [
   {
@@ -93,7 +94,7 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              <HeroCard />
+              <HeroCarousel />
             </div>
           </div>
         </section>
@@ -210,46 +211,5 @@ export default function LandingPage() {
 
       <SiteFooter />
     </>
-  );
-}
-
-/** Decorative hero mock — a stylised photo grid framed like the app. */
-function HeroCard() {
-  const tones = [
-    "bg-primary-container",
-    "bg-secondary-container",
-    "bg-primary-fixed",
-    "bg-tertiary-container",
-    "bg-secondary-fixed",
-    "bg-primary-container",
-  ];
-  return (
-    <div className="relative mx-auto w-full max-w-md">
-      <div className="rounded-[2rem] border border-surface-variant bg-surface-lowest p-5 shadow-[var(--shadow-modal)]">
-        <div className="flex items-center gap-3 pb-4">
-          <div className="h-10 w-10 rounded-full bg-primary-fixed" />
-          <div className="flex flex-col gap-1.5">
-            <div className="h-3 w-28 rounded-full bg-surface-highest" />
-            <div className="h-2.5 w-20 rounded-full bg-surface-high" />
-          </div>
-          <Heart className="ml-auto h-5 w-5 text-secondary" />
-        </div>
-        <div className="grid grid-cols-3 gap-2.5">
-          {tones.map((tone, i) => (
-            <div
-              key={i}
-              className={`aspect-square rounded-xl ${tone}`}
-              style={{ opacity: 0.9 - (i % 3) * 0.12 }}
-            />
-          ))}
-        </div>
-        <div className="mt-4 flex items-center gap-2 rounded-full bg-surface-low px-4 py-2.5">
-          <Cloud className="h-4 w-4 text-primary" />
-          <span className="font-body text-xs text-on-surface-variant">
-            Synced to your Google Drive
-          </span>
-        </div>
-      </div>
-    </div>
   );
 }

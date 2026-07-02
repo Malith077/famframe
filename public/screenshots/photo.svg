@@ -1,0 +1,33 @@
+<svg width="300" height="620" viewBox="0 0 300 620" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FamFrame photo detail screen">
+  <rect width="300" height="620" fill="#fbf9f8"/>
+  <!-- status bar -->
+  <text x="24" y="30" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1b1c1c">9:41</text>
+  <rect x="248" y="21" width="18" height="10" rx="2" fill="#424842"/>
+  <rect x="270" y="22" width="14" height="8" rx="2" fill="#424842"/>
+  <!-- header -->
+  <path d="M32 70l-8-8 8-8" stroke="#1b1c1c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="52" y="76" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="600" fill="#1b1c1c">First steps</text>
+  <circle cx="278" cy="70" r="3" fill="#424842"/>
+  <circle cx="278" cy="62" r="3" fill="#424842"/>
+  <circle cx="278" cy="78" r="3" fill="#424842"/>
+  <!-- big photo -->
+  <rect x="20" y="98" width="260" height="300" rx="24" fill="#8ba88e"/>
+  <circle cx="150" cy="230" r="46" fill="#cceace" opacity="0.55"/>
+  <path d="M132 250c0-14 8-24 18-24s18 10 18 24" stroke="#4a654e" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="150" cy="212" r="14" fill="#4a654e"/>
+  <!-- caption -->
+  <text x="20" y="430" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1b1c1c">Ava took her first steps! 🎉</text>
+  <text x="20" y="452" font-family="Inter, sans-serif" font-size="12" fill="#737972">Today · 4:12 PM</text>
+  <!-- reactions row -->
+  <path d="M40 494c-3-3-8-2-10 2-2-4-7-5-10-2-3 3-2.6 7 0 9.4l10 9 10-9c2.6-2.4 3-6.4 0-9.4z" fill="#456270"/>
+  <text x="58" y="502" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#424842">Grandma &amp; 4 others</text>
+  <!-- avatars -->
+  <circle cx="228" cy="497" r="13" fill="#c5e4f5" stroke="#fbf9f8" stroke-width="2"/>
+  <circle cx="248" cy="497" r="13" fill="#cceace" stroke="#fbf9f8" stroke-width="2"/>
+  <circle cx="268" cy="497" r="13" fill="#a4a09b" stroke="#fbf9f8" stroke-width="2"/>
+  <!-- comment box -->
+  <rect x="20" y="536" width="260" height="46" rx="23" fill="#ffffff" stroke="#e4e2e2"/>
+  <text x="40" y="564" font-family="Inter, sans-serif" font-size="13" fill="#737972">Add a comment…</text>
+  <circle cx="258" cy="559" r="15" fill="#4a654e"/>
+  <path d="M252 559h12M259 554l5 5-5 5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
