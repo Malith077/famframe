@@ -4,15 +4,14 @@ import {
   Cloud,
   Users,
   Heart,
-  Image as ImageIcon,
+  Smartphone,
   ShieldCheck,
   ArrowRight,
   Bell,
-  AlertCircle,
 } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { GoogleButton } from "@/components/google-button";
+import { AppStoreButtons } from "@/components/app-cta";
 
 const FEATURES = [
   {
@@ -39,51 +38,28 @@ const FEATURES = [
 
 const STEPS = [
   {
-    icon: ShieldCheck,
-    title: "Sign in with Google",
-    body: "Grant FamFrame permission to a single folder in your Drive. That's the only access it ever gets.",
-  },
-  {
-    icon: ImageIcon,
-    title: "Add your memories",
-    body: "Upload photos and videos of the little moments. They're compressed and stored in your Drive.",
+    icon: Smartphone,
+    title: "Download the app",
+    body: "Get FamFrame on iOS or Android and sign in with Google — your photos will live in your own Drive.",
   },
   {
     icon: Heart,
+    title: "Add your memories",
+    body: "Upload photos and videos of the little moments. They're compressed and stored securely in your Drive.",
+  },
+  {
+    icon: Users,
     title: "Share with family",
     body: "Send an invite link. Loved ones see every new memory the moment it's added.",
   },
 ];
 
-const AUTH_ERRORS: Record<string, string> = {
-  not_configured:
-    "Google sign-in isn't configured yet. Add GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET and AUTH_SECRET to .env.local.",
-  invalid_state: "Your sign-in session expired. Please try again.",
-  exchange_failed: "We couldn't complete sign-in with Google. Please try again.",
-  access_denied: "Sign-in was cancelled.",
-};
-
-export default async function LandingPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ auth_error?: string }>;
-}) {
-  const { auth_error } = await searchParams;
-  const errorMessage = auth_error
-    ? AUTH_ERRORS[auth_error] ?? "Something went wrong during sign-in."
-    : null;
-
+export default function LandingPage() {
   return (
     <>
       <SiteHeader />
 
       <main className="flex-1">
-        {errorMessage && (
-          <div className="mx-auto mt-4 flex max-w-6xl items-center gap-3 rounded-2xl border border-error-container bg-error-container/50 px-5 py-3.5 text-on-error-container">
-            <AlertCircle className="h-5 w-5 shrink-0" />
-            <p className="font-body text-sm">{errorMessage}</p>
-          </div>
-        )}
         {/* Hero */}
         <section className="relative overflow-hidden">
           <div
@@ -106,19 +82,15 @@ export default async function LandingPage({
                   securely in your own Google Drive — creating a digital heirloom
                   that never lives on our servers.
                 </p>
-                <div className="flex flex-col items-start gap-3 pt-2 sm:flex-row sm:items-center">
-                  <GoogleButton />
+                <div className="flex flex-col gap-4 pt-2">
+                  <AppStoreButtons />
                   <Link
                     href="#how-it-works"
-                    className="inline-flex items-center gap-2 px-2 py-3 font-body font-semibold text-primary transition hover:gap-3"
+                    className="inline-flex w-fit items-center gap-2 py-1 font-body font-semibold text-primary transition hover:gap-3"
                   >
                     See how it works <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
-                <p className="font-body text-xs text-on-surface-variant">
-                  By signing in, you agree to our Terms of Service and Privacy
-                  Policy.
-                </p>
               </div>
 
               <HeroCard />
@@ -200,10 +172,6 @@ export default async function LandingPage({
                   for you. Your other files stay invisible to us, and your
                   memories stay yours forever, even if you stop using the app.
                 </p>
-                <GoogleButton
-                  label="Connect your Google Drive"
-                  className="mt-2 w-fit"
-                />
               </div>
               <ul className="flex flex-col gap-4">
                 {[
@@ -225,17 +193,17 @@ export default async function LandingPage({
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="mx-auto max-w-3xl px-5 py-20 text-center">
+        {/* Final CTA / download */}
+        <section id="download" className="mx-auto max-w-3xl scroll-mt-20 px-5 py-20 text-center">
           <h2 className="font-headline text-4xl font-bold text-on-surface">
             Start your family&apos;s digital heirloom
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-lg text-on-surface-variant">
-            It takes less than a minute. No credit card, no data harvesting —
-            just a private space for the people who matter.
+            FamFrame is launching soon on iOS and Android. A private space for the
+            people who matter — no ads, no data harvesting.
           </p>
           <div className="mt-8 flex justify-center">
-            <GoogleButton />
+            <AppStoreButtons />
           </div>
         </section>
       </main>
