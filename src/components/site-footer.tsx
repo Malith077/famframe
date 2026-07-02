@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Brand } from "@/components/brand";
 
 export function SiteFooter() {
@@ -12,8 +13,12 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="flex flex-col gap-2 font-body text-sm text-on-surface-variant">
-          <span>Terms of Service</span>
-          <span>Privacy Policy</span>
+          <Link href="/terms" className="transition hover:text-on-surface">
+            Terms of Service
+          </Link>
+          <Link href="/privacy" className="transition hover:text-on-surface">
+            Privacy Policy
+          </Link>
           <span className="text-outline">
             © {new Date().getFullYear()} FamFrame
           </span>
