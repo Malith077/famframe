@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/*
+ * FamFrame Design System — "Serene Connection"
+ * Ported from the mobile app's src/constants/theme.ts
+ * Fonts: Plus Jakarta Sans (headlines), Inter (body/labels)
+ * Primary: Sage Green, Secondary: Soft Blue, Background: Warm off-white
+ */
+
+:root {
+  /* Core surfaces */
+  --background: #fbf9f8;
+  --surface: #fbf9f8;
+  --surface-bright: #fbf9f8;
+  --surface-dim: #dbd9d9;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f5f3f3;
+  --surface-container: #efeded;
+  --surface-container-high: #eae8e7;
+  --surface-container-highest: #e4e2e2;
+  --surface-variant: #e4e2e2;
+
+  /* On-surface */
+  --on-background: #1b1c1c;
+  --on-surface: #1b1c1c;
+  --on-surface-variant: #424842;
+  --inverse-surface: #303030;
+  --inverse-on-surface: #f2f0f0;
+
+  /* Outline */
+  --outline: #737972;
+  --outline-variant: #c2c8c0;
+
+  /* Primary — Sage Green */
+  --primary: #4a654e;
+  --on-primary: #ffffff;
+  --primary-container: #8ba88e;
+  --on-primary-container: #233d29;
+  --inverse-primary: #b0ceb2;
+  --primary-fixed: #cceace;
+  --primary-fixed-dim: #b0ceb2;
+  --on-primary-fixed: #07200f;
+  --on-primary-fixed-variant: #334d38;
+
+  /* Secondary — Soft Blue */
+  --secondary: #456270;
+  --on-secondary: #ffffff;
+  --secondary-container: #c5e4f5;
+  --on-secondary-container: #496775;
+  --secondary-fixed: #c8e7f8;
+
+  /* Tertiary — Warm stone */
+  --tertiary: #605e5a;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #a4a09b;
+
+  /* Error */
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+}
+
+/* Expose FamFrame tokens as Tailwind theme values (utilities + font vars) */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-lowest: var(--surface-container-lowest);
+  --color-surface-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-container-high);
+  --color-surface-highest: var(--surface-container-highest);
+  --color-surface-variant: var(--surface-variant);
+
+  --color-on-background: var(--on-background);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-inverse-primary: var(--inverse-primary);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-secondary-fixed: var(--secondary-fixed);
+
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
+
+  /* Fonts — bound in layout.tsx via next/font */
+  --font-headline: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Radius scale (mirrors Radius in theme.ts) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+
+  /* Sage-tinted ambient shadows (mirrors Elevation in theme.ts) */
+  --shadow-card: 0 2px 12px 0 rgb(74 101 78 / 0.06);
+  --shadow-fab: 0 8px 24px 0 rgb(74 101 78 / 0.15);
+  --shadow-modal: 0 12px 48px 0 rgb(0 0 0 / 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--on-background);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--primary-fixed);
+  color: var(--on-primary-fixed);
+}
