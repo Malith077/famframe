@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     "share photos with family",
     "private family album",
   ],
-  icons: { icon: "/famframe-logo.png" },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
