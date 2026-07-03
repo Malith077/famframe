@@ -6,6 +6,7 @@ import {
   SITE_NAME,
   SITE_TAGLINE,
   SITE_DESCRIPTION,
+  SOCIAL_LINKS,
 } from "@/lib/site";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -57,16 +58,41 @@ export const metadata: Metadata = {
   },
 };
 
-/** Structured data so search engines understand this is a mobile app. */
+/**
+ * Structured data. The Organization + WebSite nodes tell search engines that
+ * this domain *is* the FamFrame brand (enabling the logo, sitelinks, and brand
+ * association for the "famframe" query); MobileApplication describes the app.
+ */
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  name: SITE_NAME,
-  description: SITE_DESCRIPTION,
-  applicationCategory: "LifestyleApplication",
-  operatingSystem: "iOS, Android",
-  url: SITE_URL,
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon.png`,
+      description: SITE_DESCRIPTION,
+      ...(SOCIAL_LINKS.length > 0 ? { sameAs: SOCIAL_LINKS } : {}),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "MobileApplication",
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      applicationCategory: "LifestyleApplication",
+      operatingSystem: "iOS, Android",
+      url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+  ],
 };
 
 export default function RootLayout({

@@ -8,6 +8,10 @@ import {
   ShieldCheck,
   ArrowRight,
   Bell,
+  ScanFace,
+  Brain,
+  Ban,
+  Sparkles,
 } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -52,6 +56,24 @@ const STEPS = [
     icon: Users,
     title: "Share with family",
     body: "Send an invite link. Loved ones see every new memory the moment it's added.",
+  },
+];
+
+const NO_AI = [
+  {
+    icon: ScanFace,
+    title: "No facial recognition",
+    body: "We never scan, tag, or identify the people in your photos. The faces you love stay just faces.",
+  },
+  {
+    icon: Brain,
+    title: "No model training",
+    body: "Your memories are never used to train AI — not ours, not a third party's. Ever.",
+  },
+  {
+    icon: Ban,
+    title: "No data mining",
+    body: "No profiling, no ad targeting, no selling your data. Your family isn't a product.",
   },
 ];
 
@@ -191,6 +213,48 @@ export default function LandingPage() {
                 ))}
               </ul>
             </div>
+          </div>
+        </section>
+
+        {/* No AI stance */}
+        <section id="no-ai" className="mx-auto max-w-6xl px-5 py-16">
+          <div className="overflow-hidden rounded-[2rem] bg-inverse-surface px-8 py-14 text-inverse-on-surface sm:px-14">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 font-body text-sm font-semibold">
+                <Sparkles className="h-4 w-4" /> No AI. No exceptions.
+              </span>
+              <h2 className="mt-5 font-headline text-3xl font-semibold leading-tight sm:text-4xl">
+                It&apos;s the AI age. Your baby isn&apos;t training data.
+              </h2>
+              <p className="mt-4 font-body text-lg leading-relaxed text-inverse-on-surface/80">
+                Every other app is quietly feeding your photos to algorithms. We
+                refuse. FamFrame runs zero AI on your family&apos;s memories — the
+                little ones you cherish are never scanned, recognised, or used to
+                teach a machine anything.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-5 sm:grid-cols-3">
+              {NO_AI.map((item) => (
+                <div key={item.title} className="rounded-3xl bg-white/[0.06] p-7">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
+                    <item.icon className="h-6 w-6 text-inverse-primary" strokeWidth={2} />
+                  </div>
+                  <h3 className="mt-4 font-headline text-lg font-semibold">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 font-body text-sm text-inverse-on-surface/70">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mx-auto mt-10 max-w-2xl text-center font-body text-inverse-on-surface/70">
+              It&apos;s the age of AI — and we still choose total privacy. Your
+              precious ones&apos; memories belong to you and the family you share
+              them with. No one else.
+            </p>
           </div>
         </section>
 

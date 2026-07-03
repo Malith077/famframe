@@ -25,6 +25,18 @@ export const STORE_LINKS = {
 export const APP_IS_LIVE = STORE_LINKS.ios.available || STORE_LINKS.android.available;
 
 /**
+ * Public profiles that belong to FamFrame. Listed as `sameAs` in the
+ * Organization structured data — this is a real brand-association signal that
+ * helps Google connect this domain to the FamFrame brand. Add each URL as it
+ * goes live (social profiles, App Store / Play Store listings, etc.).
+ */
+export const SOCIAL_LINKS: string[] = [
+  // "https://www.instagram.com/famframe",
+  // "https://apps.apple.com/app/id0000000000",
+  // "https://play.google.com/store/apps/details?id=com.famframe.app",
+];
+
+/**
  * Hero carousel slides. These are on-brand placeholder mockups — replace the
  * paths with real app screenshots (PNG/JPG) dropped into `public/screenshots/`.
  * Portrait phone aspect (~9:19) works best.
